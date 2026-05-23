@@ -1,4 +1,4 @@
-﻿/* Shared Nav & Footer Injector */
+/* Shared Nav & Footer Injector */
 (function() {
   const isService = window.location.pathname.includes('/services/');
   const base = isService ? '../' : '';
@@ -100,4 +100,31 @@
   // Inject footer  
   const footerPlaceholder = document.getElementById('shared-footer');
   if (footerPlaceholder) footerPlaceholder.outerHTML = footerHTML;
+
+  // Remove pricing sections from service detail pages
+  if (isService) {
+    const removePricing = () => {
+      document.querySelectorAll('section, div.pricing-table, div.pricing-grid').forEach(el => {
+        const header = el.querySelector('h2, h3, h4, .section-badge, .section-header');
+        if (header) {
+          const headerText = header.textContent.toLowerCase();
+          if (headerText.includes('pricing') || headerText.includes('packages') || headerText.includes('plans')) {
+            el.remove();
+          }
+        }
+        // Fallback checks on ID and Class name
+        if (el.id && (el.id.includes('pricing') || el.id.includes('plans') || el.id.includes('packages'))) {
+          el.remove();
+        }
+        if (el.className && typeof el.className === 'string' && (el.className.includes('pricing') || el.className.includes('plans') || el.className.includes('packages'))) {
+          el.remove();
+        }
+      });
+    };
+    
+    // Run immediately and also on DOMContentLoaded to ensure elements are removed
+    removePricing();
+    document.addEventListener('DOMContentLoaded', removePricing);
+    window.addEventListener('load', removePricing);
+  }
 })();
