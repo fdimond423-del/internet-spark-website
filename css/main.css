@@ -2311,3 +2311,16 @@ div.loader-logo:not(:has(img)) {
     padding: 120px 0 60px;
   }
 }
+
+/* ===== Floating Button Text Hiding & Phone Icon Global Fixes ===== */
+.whatsapp-float span,
+.call-float span,
+.float-tooltip {
+  display: none !important;
+}
+
+i.fa-phone-alt:not(.call-float i), 
+i.fa-phone:not(.call-float i) {
+  display: inline-block !important;
+  transform: scaleX(-1) rotate(-15deg) !important;
+}
