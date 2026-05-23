@@ -6,7 +6,20 @@
   const navHTML = `
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="${base}index.html" class="nav-logo"><img src="${base}images/logo.png" alt="Internet Spark Logo"></a>
+      <a href="${base}index.html" class="nav-logo">
+        <div class="spark-logo-wrapper" style="--logo-width: 70px; --logo-height: 42px; --logo-scale: 0.18;">
+          <div class="spark-logo">
+            <div class="text">
+              <div class="internet">Internet</div>
+              <div class="spark">SPARK</div>
+            </div>
+            <div class="icon">
+              <div class="i"></div>
+              <div class="s">S</div>
+            </div>
+          </div>
+        </div>
+      </a>
       <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
       <ul class="nav-menu" id="nav-menu">
         <li class="nav-item"><a href="${base}index.html" class="nav-link">Home</a></li>
@@ -50,7 +63,22 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="logo"><img src="${base}images/logo.png" alt="Internet Spark"></div>
+          <div class="logo">
+            <a href="${base}index.html" style="display:inline-block;">
+              <div class="spark-logo-wrapper" style="--logo-width: 85px; --logo-height: 51px; --logo-scale: 0.22;">
+                <div class="spark-logo">
+                  <div class="text">
+                    <div class="internet">Internet</div>
+                    <div class="spark">SPARK</div>
+                  </div>
+                  <div class="icon">
+                    <div class="i"></div>
+                    <div class="s">S</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
           <p>Internet Spark is a premium international digital marketing agency based in Ahmedabad, India. Data-driven strategies that transform businesses and generate measurable ROI.</p>
           <div class="footer-socials">
             <a href="https://www.facebook.com/internetspark" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -93,12 +121,12 @@
   </footer>`;
 
   // Inject nav
-  const navPlaceholder = document.getElementById('shared-nav');
+  const navPlaceholder = document.getElementById('shared-nav') || document.getElementById('navbar') || document.querySelector('.navbar');
   if (navPlaceholder) navPlaceholder.outerHTML = navHTML;
   else document.body.insertAdjacentHTML('afterbegin', navHTML);
 
   // Inject footer  
-  const footerPlaceholder = document.getElementById('shared-footer');
+  const footerPlaceholder = document.getElementById('shared-footer') || document.querySelector('footer');
   if (footerPlaceholder) footerPlaceholder.outerHTML = footerHTML;
 
   // Remove pricing sections from service detail pages
