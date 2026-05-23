@@ -2354,9 +2354,9 @@ i.fa-phone:not(.call-float i) {
   font-size: 52px;
   font-family: Arial, sans-serif;
   font-weight: 700;
-  color: #ff0077;
+  color: #ffffff;
   margin-left: 62px;
-  text-shadow: 0 0 2px #ff66aa, 0 0 8px rgba(255,0,120,.45);
+  text-shadow: 0 0 2px #ffffff, 0 0 8px rgba(255,255,255,.3);
 }
 
 .spark-logo .spark {
@@ -2364,8 +2364,8 @@ i.fa-phone:not(.call-float i) {
   font-family: Arial Black, sans-serif;
   font-weight: 900;
   letter-spacing: -1px;
-  color: #ff0077;
-  text-shadow: 0 0 2px #ff66aa, 0 0 8px rgba(255,0,120,.45);
+  color: #ffffff;
+  text-shadow: 0 0 2px #ffffff, 0 0 8px rgba(255,255,255,.3);
 }
 
 .spark-logo .icon {
