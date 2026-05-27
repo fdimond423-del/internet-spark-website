@@ -2437,5 +2437,4 @@ div.loader-logo:not(:has(img)) {
 
 /* Background Video */
 .bg-video { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -100; opacity: 0.15; pointer-events: none; }
-body { background: transparent; }
 .page-loader { z-index: 9999; }
