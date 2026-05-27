@@ -221,6 +221,9 @@ function initParticles() {
   animate();
 
   window.addEventListener('resize', () => {
+    if (!canvas) return;
+    
+    // if (window.innerWidth < 768) return; // Disable on mobile for performance
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
   });
